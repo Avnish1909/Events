@@ -1,0 +1,218 @@
+
+
+body{
+  background-color: var(--dark-1);
+}
+/* ✅ Page background */
+.pageWrapper {
+  background-color: var(--dark-1);
+background: radial-gradient(
+      circle at 20% 30%,
+      rgba(139, 92, 246, 0.15) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(16, 185, 129, 0.15) 0%,
+      transparent 40%
+    );
+  min-height: 100vh;
+  padding: 2rem 0;
+  color: var(--light);
+}
+
+/* ✅ Event list container */
+.eventList {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  
+}
+
+/* ✅ Card styling (stays light to contrast dark bg) */
+.eventCard {
+  display: flex;
+  gap: 1rem;
+  background: linear-gradient(145deg, #0f0f0f, #1a1a1a, #2c2c2c);
+  align-items: center; /* ✅ aligns image and text vertically */
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.eventCard:hover {
+  transform: scale(1.02);
+}
+
+/* ✅ Image styling */
+.bannerImage {
+  width: 300px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 5px;
+  background-color: #eee;
+  flex-shrink: 0; /* ✅ Prevents image from shrinking in flex layout */
+}
+
+@media (max-width: 768px) {
+  .eventCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bannerImage {
+    width: 100%;           /* ✅ Full width of the card */
+    height: auto;          /* ✅ Maintain aspect ratio */
+    max-width: none;       /* ✅ Remove any limits if set earlier */
+    border-radius: 10px;   /* Optional: make it match the card */
+  }
+
+  .details {
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .details h2 {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .registerLink a {
+    font-size: 1rem;
+  }
+
+  .eventList {
+    padding: 1rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    margin: 1.5rem 0;
+  }
+}
+
+/* ✅ Text in card */
+.details h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-family: "BBH Sans Bartle", sans-serif;
+   font-weight: 400;
+  font-style: normal;
+  background: rgb(229, 9, 20);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.details p {
+  margin: 0.2rem 0;
+  color: whitesmoke
+}
+
+.description {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  color: whitesmoke
+}
+
+/* ✅ Reusable loading, error, and empty state containers */
+.loadingContainer,
+.errorContainer,
+.emptyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--light);
+}
+
+/* ✅ Loading spinner */
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ✅ Retry button */
+.retryButton {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.retryButton:hover {
+  background-color: var(--primary-dark);
+}
+.registerLink a {
+  color: #b38600; /* dull yellow */
+  animation: glowPulse 1.5s ease-in-out infinite;
+}
+
+/* Keyframes for pulsing yellow glow effect */
+@keyframes glowPulse {
+  0% {
+    color: #b38600; /* dull yellow */
+    text-shadow: 0 0 0px rgba(255, 215, 0, 0.0);
+  }
+  50% {
+    color: #ffd700; /* bright yellow (gold) */
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.6); /* glowing yellow */
+  }
+  100% {
+    color: #b38600;
+    text-shadow: 0 0 0px rgba(255, 215, 0, 0.0);
+  }
+}
+h4 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 2rem 0;
+
+  /* Gradient text setup */
+  background: linear-gradient(90deg, #ffffff, #dddddd, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  letter-spacing: -0.5px;
+
+  /* Animation added */
+  animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0.0);
+  }
+  50% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0.0);
+  }
+}
+
+

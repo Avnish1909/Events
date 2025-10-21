@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Croissant+One&family=Montserrat:ital,wght@0,400;1,700&display=swap');
+
+/* Optional: charset must come first if you use it */
+
+
+
+/* Define variables if needed */
+:root {
+ /* Dark Theme Variables */
+  --primary-dark: #8b5cf6;
+  --primary-light-dark: #a78bfa;
+  --primary-dark-dark: #7c3aed;
+  --secondary-dark: #10b981;
+  --accent-dark: #ec4899;
+  --dark-1: #0f172a;
+  --dark-2: #1e293b;
+  --dark-3: #334155;
+  --light-dark: #f1f5f9;
+  --gray-dark: #94a3b8;
+  --warm-dark: #fef3c7;
+
+  /* Light Theme Variables */
+  --primary-light: #FFC3A0;
+  --light2: #fecfb4;
+  --secondary-light: #2f3d61;
+  --accent-light: #D5E8D4;
+  --text-light: #4A4A4A;
+  --background-light: #faf2eb;
+  --black-light: #000000;
+}
+
+/* Now your styles */
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
